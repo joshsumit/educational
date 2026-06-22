@@ -1,3 +1,4 @@
+
 import numpy as np
 
 np.set_printoptions(precision=4, suppress=True, linewidth=160)
@@ -42,16 +43,6 @@ def print_matrix_multiply(name: str, left_shape, right_shape, out_shape, explana
 
 def tensor_bytes(x):
     return int(x.size * x.itemsize)
-
-
-def matmul_flops(a_shape, b_shape):
-    # Rough multiply-add count for matrix multiply like [m,k] x [k,n] => 2*m*k*n floating ops.
-    if len(a_shape) < 2 or len(b_shape) < 2:
-        return None
-    m = a_shape[-2]
-    k = a_shape[-1]
-    n = b_shape[-1]
-    return int(2 * m * k * n)
 
 
 def print_tensor_stats(name: str, x):

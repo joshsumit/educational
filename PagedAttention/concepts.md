@@ -1,34 +1,36 @@
+
 # Concepts Behind This Repo
 
-## 1. Why Q/K/V starts at `[B, S, D]`
-The linear projection changes the **content** of each hidden vector but not the visible rank or visible shape.
-So after:
+## 1. Why this version moved from one sequence to many sequences
+The previous version used only one sequence, which makes attention and cache management look simpler than production.
+This updated version supports many active sequences at the same time.
 
-```python
-Q_raw = X @ W_q
-```
+That matters because real inference runtimes serve multiple users concurrently.
+Each user can have a different prompt length and a different decode progress.
 
-we still have `[B, S, D]`.
+## 2. No padding
+This repo intentionally avoids padding.
+Instead of building one rectangular tensor with max sequence length, each sequence stores only its own real tokens.
 
-Heads are introduced only after we **reshape** the last dimension.
+This is more practical for continuous batching / inflight batching because:
+- users arrive with different prompt lengths
+- decode rounds may include only a subset of active users
+- memory waste from padding is avoided
 
-## 2. When heads appear
-The head split is:
+## 3. Shared allocator, isolated sequence state
+One global allocator owns physical blocks.
+But each sequence keeps its own:
+- ordered block list
+- logical token table
+- token count
 
-- before: `[B, S, D]`
-- after reshape: `[B, S, H, Dk]`
-- after transpose: `[B, H, S, Dk]`
+This means physical storage is shared at the runtime level,
+while logical attention history remains isolated per user.
 
-with `D = H * Dk`.
+## 4. Continuous batching intuition
+In this educational architecture:
+- prefill of one user can happen while other users already exist
+- decode rounds may schedule different active users each time
+- a new request can enter later and get its own prompt prefill
 
-## 3. Why transpose to `[B, H, S, Dk]`
-Attention runs independently per head.
-Putting `H` before `S` makes the tensor layout easier to reason about for head-wise attention kernels.
-
-## 4. Why prefill must write cache
-In real decoding, prompt tokens are not thrown away.
-Their K/V must be stored so later decode tokens can attend to them.
-
-## 5. Why paged attention exists
-A giant contiguous cache can be hard to grow efficiently.
-Paged attention stores K/V in fixed-size blocks/pages and uses a mapping table to find them.
+That is the core scheduling flavor of inflight batching.
