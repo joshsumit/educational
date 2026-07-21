@@ -1,0 +1,31 @@
+# Transformer Systems Blueprint V2 Advanced Manifest
+
+- `MANIFEST.md`
+- `README.md`
+- `requirements.txt`
+- `run_all_smoke_tests.py`
+- `stage00_cuda_execution_model/__init__.py`
+- `stage00_cuda_execution_model/warp_block_memory.py`
+- `stage01_tensorcore_programming/__init__.py`
+- `stage01_tensorcore_programming/ldmatrix_explained.py`
+- `stage01_tensorcore_programming/mma_sync_walkthrough.py`
+- `stage01_tensorcore_programming/wmma_fragments.py`
+- `stage02_async_memory_pipeline/__init__.py`
+- `stage02_async_memory_pipeline/cp_async_pipeline.py`
+- `stage02_async_memory_pipeline/double_buffering.py`
+- `stage03_cutlass_gemm_tiling/__init__.py`
+- `stage03_cutlass_gemm_tiling/cutlass_style_gemm_tiling.py`
+- `stage03_cutlass_gemm_tiling/splitk_gemm_reduction.py`
+- `stage04_triton_attention_sim/__init__.py`
+- `stage04_triton_attention_sim/triton_attention_kernel_simulation.py`
+- `stage05_flashdecode/__init__.py`
+- `stage05_flashdecode/flashdecode_reference.py`
+- `stage06_paged_scheduler/__init__.py`
+- `stage06_paged_scheduler/paged_attention_scheduler_deep_dive.py`
+- `stage07_speculative_decoding/__init__.py`
+- `stage07_speculative_decoding/speculative_decoding_runtime.py`
+- `stage08_quantized_runtime_kernels/__init__.py`
+- `stage08_quantized_runtime_kernels/block_scaled_matmul.py`
+- `stage08_quantized_runtime_kernels/int8_weight_only_gemm.py`
+- `stage09_end_to_end_advanced_runtime/__init__.py`
+- `stage09_end_to_end_advanced_runtime/advanced_runtime_simulator.py`
