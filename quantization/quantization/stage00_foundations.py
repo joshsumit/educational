@@ -6,7 +6,7 @@ from __future__ import annotations
 
 import torch
 
-from .constants import EPS
+from constants import EPS
 
 
 def integer_range(num_bits: int, signed: bool = True) -> tuple[int, int]:
@@ -190,5 +190,5 @@ def saturation_rate(q: torch.Tensor, qmin: int, qmax: int) -> torch.Tensor:
     return ((q == qmin) | (q == qmax)).to(torch.float32).mean()
 
 
-integer_range(8, signed=True)
-integer_range(8, signed=False)  # Example usage
+print(integer_range(8, signed=True))
+print(integer_range(8, signed=False)) # Example usage
