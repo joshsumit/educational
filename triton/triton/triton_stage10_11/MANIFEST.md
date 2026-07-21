@@ -1,0 +1,23 @@
+# Manifest
+
+- README.md
+- STAGE10_11_INTEGRATION_GUIDE.md
+- requirements.txt
+- run_all_smoke_tests.py
+- stage10_decode_kv_cache/00_prefill_vs_decode.py
+- stage10_decode_kv_cache/01_kv_cache_layouts.py
+- stage10_decode_kv_cache/02_decode_attention_reference.py
+- stage10_decode_kv_cache/03_decode_attention_triton.py
+- stage10_decode_kv_cache/04_multihead_decode_reference.py
+- stage10_decode_kv_cache/05_kv_cache_memory_model.py
+- stage10_decode_kv_cache/06_decode_interview_notes.py
+- stage10_decode_kv_cache/__init__.py
+- stage11_paged_attention/00_block_table_basics.py
+- stage11_paged_attention/01_paged_kv_cache_layout.py
+- stage11_paged_attention/02_paged_attention_reference.py
+- stage11_paged_attention/03_paged_attention_triton_skeleton.py
+- stage11_paged_attention/04_slot_mapping_and_append.py
+- stage11_paged_attention/05_prefix_cache_simulator.py
+- stage11_paged_attention/06_paged_attention_memory_model.py
+- stage11_paged_attention/07_paged_attention_interview_notes.py
+- stage11_paged_attention/__init__.py

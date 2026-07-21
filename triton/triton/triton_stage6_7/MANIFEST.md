@@ -1,0 +1,21 @@
+# Manifest
+
+- README.md
+- STAGE6_7_INTEGRATION_GUIDE.md
+- requirements.txt
+- run_all_smoke_tests.py
+- stage06_matmul/00_matmul_shapes_and_strides.py
+- stage06_matmul/01_naive_matmul_reference.py
+- stage06_matmul/02_tiled_matmul_reference.py
+- stage06_matmul/03_naive_matmul_triton.py
+- stage06_matmul/04_tiled_matmul_triton.py
+- stage06_matmul/05_grouped_matmul_triton.py
+- stage06_matmul/06_matmul_interview_notes.py
+- stage06_matmul/__init__.py
+- stage07_autotuning_batched/00_autotune_config_model.py
+- stage07_autotuning_batched/01_autotuned_matmul_triton.py
+- stage07_autotuning_batched/02_batched_matmul_reference.py
+- stage07_autotuning_batched/03_batched_matmul_triton.py
+- stage07_autotuning_batched/04_precision_and_accumulation.py
+- stage07_autotuning_batched/05_matmul_benchmark_harness.py
+- stage07_autotuning_batched/__init__.py

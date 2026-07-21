@@ -1,0 +1,25 @@
+# Manifest
+
+- MANIFEST.md
+- README.md
+- STAGE2_3_INTEGRATION_GUIDE.md
+- requirements.txt
+- run_all_smoke_tests.py
+- stage02_memory_and_masks/00_pointer_arithmetic.py
+- stage02_memory_and_masks/01_masked_load_store.py
+- stage02_memory_and_masks/02_strides_and_layouts.py
+- stage02_memory_and_masks/03_coalescing_patterns.py
+- stage02_memory_and_masks/__init__.py
+- stage02_memory_and_masks/__pycache__/00_pointer_arithmetic.cpython-312.pyc
+- stage02_memory_and_masks/__pycache__/01_masked_load_store.cpython-312.pyc
+- stage02_memory_and_masks/__pycache__/02_strides_and_layouts.cpython-312.pyc
+- stage02_memory_and_masks/__pycache__/03_coalescing_patterns.cpython-312.pyc
+- stage02_memory_and_masks/__pycache__/__init__.cpython-312.pyc
+- stage03_elementwise/00_vector_add_triton.py
+- stage03_elementwise/01_relu_triton.py
+- stage03_elementwise/02_silu_triton.py
+- stage03_elementwise/03_gelu_triton.py
+- stage03_elementwise/04_scale_bias_triton.py
+- stage03_elementwise/05_fused_affine_relu_triton.py
+- stage03_elementwise/__init__.py
+- stage03_elementwise/__pycache__/__init__.cpython-312.pyc
