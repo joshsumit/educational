@@ -188,3 +188,7 @@ def saturation_rate(q: torch.Tensor, qmin: int, qmax: int) -> torch.Tensor:
         Scalar tensor in [0, 1]. Example: 0.05 means 5% saturated values.
     """
     return ((q == qmin) | (q == qmax)).to(torch.float32).mean()
+
+
+integer_range(8, signed=True)
+integer_range(8, signed=False)  # Example usage
